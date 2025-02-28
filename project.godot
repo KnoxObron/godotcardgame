@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="新建游戏项目"
-run/main_scene="res://scenes/Main.tscn"
+config/name="Godot Texas Card Game"
+run/main_scene="res://scenes/GameScene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
