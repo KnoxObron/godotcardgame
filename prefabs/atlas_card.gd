@@ -23,7 +23,7 @@ signal on_mouse_release
 ## Whether visual card effects are enabled
 @export var cardEffects: bool = true
 ## The card's data
-@export var data: CardData
+@export var data: CardData = CardData.new(2, CardData.CardPattern.Hearts)
 ## The sprite displaying the card texture
 @onready var _cardTexture: Sprite2D = $CardTexture
 ## Optional shadow effect under the card
