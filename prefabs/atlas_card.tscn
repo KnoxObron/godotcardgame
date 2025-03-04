@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkkajveg5v8i1"]
+
+[ext_resource type="Texture2D" uid="uid://cmfiicx3g0t2h" path="res://assets/Cards.jpg" id="1_5vqyg"]
+[ext_resource type="Script" path="res://prefabs/atlas_card.gd" id="1_ioo7o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85lae"]
+atlas = ExtResource("1_5vqyg")
+region = Rect2(0, 0, 256, 356)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1h0yn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tflbx"]
+size = Vector2(256, 356)
+
+[node name="AtlasCard" type="Node2D"]
+script = ExtResource("1_ioo7o")
+
+[node name="CardTexture" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_85lae")
+
+[node name="Shadow" type="Sprite2D" parent="CardTexture"]
+modulate = Color(0, 0, 0, 0.196078)
+z_index = -10
+position = Vector2(0, 20)
+scale = Vector2(256, 356)
+texture = SubResource("CanvasTexture_1h0yn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tflbx")
