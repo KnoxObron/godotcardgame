@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://brrpih28gcncx"]
 
-[ext_resource type="Script" uid="uid://dfkl6p5l67hm7" path="res://prefabs/atlas_card_manager.gd" id="1_2umh1"]
+[ext_resource type="Script" uid="uid://o3mbijjrpvhx" path="res://prefabs/atlas_card_manager.gd" id="1_2umh1"]
 [ext_resource type="PackedScene" uid="uid://dkkajveg5v8i1" path="res://prefabs/atlas_card.tscn" id="2_xy3my"]
 
 [node name="GameScene" type="Node2D"]
