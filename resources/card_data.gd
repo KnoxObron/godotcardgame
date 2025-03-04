@@ -12,9 +12,9 @@ enum CardPattern {
 }
 
 ## The card's value (2-14, where 11=Jack, 12=Queen, 13=King, 14=Ace)
-@export_range(2, 14, int(1)) var cardValue: int = 2:
+@export_range(2, 14, 1) var cardValue: int = 2:
 	set(value):
-		self.value = clamp(value, 2, 14)
+		cardValue = clamp(value, 2, 14)
 		self.on_data_changed.emit(self)
 	get:
 		return cardValue
@@ -22,7 +22,7 @@ enum CardPattern {
 ## The card's suit (Hearts, Diamonds, Clubs, Spades)
 @export var cardPattern: CardPattern = CardPattern.Hearts:
 	set(value):
-		self.cardPattern = value
+		cardPattern = value
 		self.on_data_changed.emit(self)
 	get:
 		return cardPattern
