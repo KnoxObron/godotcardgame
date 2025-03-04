@@ -73,11 +73,11 @@ func update_texture() -> void:
 		var atlas: AtlasTexture = _cardTexture.texture as AtlasTexture
 		
 		var x_position: int = 0
-		if data.value % 13 != 0:
-			x_position = int((data.value - 1) * _card_size.x)
+		if data.cardValue % 13 != 0:
+			x_position = int((data.cardValue - 1) * _card_size.x)
 		
 		var y_position: int = 0
-		match data.pattern:
+		match data.cardPattern:
 			CardPattern.Clubs:
 				y_position = int(0 * _card_size.y)
 			CardPattern.Hearts:
@@ -157,15 +157,15 @@ func __ge__(card: AtlasCard) -> bool:
 
 ## Returns a string representation of the card value
 func _value_to_string() -> String:
-	if data.value < 11:
-		return str(data.value)
-	elif data.value == 11:
+	if data.cardValue < 11:
+		return str(data.cardValue)
+	elif data.cardValue == 11:
 		return "Jack"
-	elif data.value == 12:
+	elif data.cardValue == 12:
 		return "Queen"
-	elif data.value == 13:
+	elif data.cardValue == 13:
 		return "King"
-	elif data.value == 14:
+	elif data.cardValue == 14:
 		return "Ace"
 	else:
 		return str('2')
@@ -173,13 +173,13 @@ func _value_to_string() -> String:
 
 ## Returns a string representation of the card pattern
 func _pattern_to_string() -> String:
-	if data.pattern == CardPattern.Hearts:
+	if data.cardPattern == CardPattern.Hearts:
 		return "Hearts"
-	elif data.pattern == CardPattern.Diamonds:
+	elif data.cardPattern == CardPattern.Diamonds:
 		return "Diamonds"
-	elif data.pattern == CardPattern.Clubs:
+	elif data.cardPattern == CardPattern.Clubs:
 		return "Clubs"
-	elif data.pattern == CardPattern.Spades:
+	elif data.cardPattern == CardPattern.Spades:
 		return "Spades"
 	return "Unknown"
 

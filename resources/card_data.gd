@@ -12,38 +12,38 @@ enum CardPattern {
 }
 
 ## The card's value (2-14, where 11=Jack, 12=Queen, 13=King, 14=Ace)
-@export_range(2, 14, int(1)) var value: int = 2:
+@export_range(2, 14, int(1)) var cardValue: int = 2:
 	set(value):
 		self.value = clamp(value, 2, 14)
 		self.on_data_changed.emit(self)
 	get:
-		return value
+		return cardValue
 
 ## The card's suit (Hearts, Diamonds, Clubs, Spades)
-@export var pattern: CardPattern = CardPattern.Hearts:
+@export var cardPattern: CardPattern = CardPattern.Hearts:
 	set(value):
-		self.pattern = value
+		self.cardPattern = value
 		self.on_data_changed.emit(self)
 	get:
-		return pattern
+		return cardPattern
 		
 		
 func _init(pValue: int, pPattern: CardPattern) -> void:
-	self.value = pValue
-	self.pattern = pPattern
+	self.cardValue = pValue
+	self.cardPattern = pPattern
 
 
 # Add this to your CardData class
 func compare_to(other: CardData) -> int:
-	if self.value > other.value:
+	if self.cardValue > other.cardValue:
 		return 1
-	elif self.value < other.value:
+	elif self.cardValue < other.cardValue:
 		return -1
 	else:
 		# Same value, compare patterns
-		if self.pattern > other.pattern:
+		if self.cardPattern > other.cardPattern:
 			return 1
-		elif self.pattern < other.pattern:
+		elif self.cardPattern < other.cardPattern:
 			return -1
 		else:
 			return 0  # Equal cards

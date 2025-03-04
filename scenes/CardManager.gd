@@ -14,8 +14,6 @@ var CardScene = preload("res://scenes/Card.tscn")
 var screen_size: Vector2
 var card_being_dragged: Node2D = null
 
-@warning_ignore("unused_parameter")
-
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
