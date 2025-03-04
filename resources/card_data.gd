@@ -50,6 +50,7 @@ func compare_to(other: CardData) -> int:
 
 
 func randomize_card() -> CardData:
-	self.data.value = randi_range(2, 14)
-	self.data.pattern = CardPattern.values()[randi_range(0, 3)]
+	self.cardValue = randi_range(2, 14)
+	self.cardPattern = CardPattern.values()[randi_range(0, 3)]
 	return self
+	
