@@ -36,9 +36,9 @@ static func distribute_cards(players: int, cardsPerPlayer: int = 5):
 	for i in players:
 		var cards: Array[CardData] = []
 		for j in cardsPerPlayer:
-			var card: CardData = CardData.new(2, CardData.CardPattern.Hearts).randomize()
+			var card: CardData = CardData.new(2, CardData.CardPattern.Hearts).randomize_card()
 			while card in deck:
-				card = CardData.new(2, CardData.CardPattern.Hearts).randomize()
+				card = CardData.new(2, CardData.CardPattern.Hearts).randomize_card()
 			deck.append(card)
 			cards.append(card)
 		
