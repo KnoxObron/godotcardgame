@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 	
 
 func _init():
-	self.data.randomize()
+	self.data.randomize_card()
 
 
 ## Updates the AtlasTexture region based on the current card value and pattern
